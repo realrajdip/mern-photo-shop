@@ -1,7 +1,11 @@
+import Search from "../components/Search";
+
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className="mt-36">
+      <Search />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
