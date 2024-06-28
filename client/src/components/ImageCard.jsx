@@ -1,6 +1,3 @@
-import { FaShoppingCart } from "react-icons/fa";
-import { IoIosHeart } from "react-icons/io";
-
 const ImageCard = ({ id, img, title, price, author, icon1, icon2 }) => {
   return (
     <div className="rounded-lg bg-white shadow-lg p-2">
