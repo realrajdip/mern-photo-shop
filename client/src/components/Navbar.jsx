@@ -2,26 +2,34 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex flex-col sm:flex-row justify-between items-start sm:items-center px-5 py-5 fixed top-0 left-0 right-0 shadow-md gap-1 sm:gap-0 z-30 bg-white">
-      <div className="flex justify-between items-center">
-        <img src="/picprismlogo.png" alt="logo" className="w-[50px]" />
-        <Link to={"/"} className="font-bold text-3xl">
+    <nav className="flex flex-col sm:flex-row justify-between items-center px-6 py-4 fixed top-0 left-0 right-0 shadow-lg z-30 bg-white">
+      <div className="flex items-center gap-4">
+        <img src="/picprismlogo.png" alt="logo" className="w-12 rounded-full shadow-md" />
+        <Link to="/" className="font-bold text-3xl text-gray-900">
           PicPrism
         </Link>
       </div>
-      <ul className="flex gap-5 text-lg text-gray-400 ml-5 sm:ml-0">
-        <Link to={"/"} className="hover:text-black cursor-pointer sm:p-2">
-          About
-        </Link>
-        <Link to={"/"} className="hover:text-black cursor-pointer sm:p-2">
-          Contact
-        </Link>
-        <Link to={"/login"} className="hover:text-black cursor-pointer sm:p-2">
-          Log In
-        </Link>
-        <Link to={"/signup"} className="hover:text-black cursor-pointer sm:p-2">
-          Sign Up
-        </Link>
+      <ul className="flex gap-6 mt-4 sm:mt-0 text-lg text-gray-600">
+        <li>
+          <Link to="/" className="rounded-md p-2 hover:bg-black hover:text-white transition-colors duration-300">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link to="/" className="rounded-md p-2 hover:bg-black hover:text-white transition-colors duration-300">
+            Contact
+          </Link>
+        </li>
+        <li>
+          <Link to="/login" className="rounded-md p-2  hover:bg-black hover:text-white transition-colors duration-300">
+            Log In
+          </Link>
+        </li>
+        <li>
+          <Link to="/signup" className="rounded-md p-2  hover:bg-black hover:text-white transition-colors duration-300">
+            Sign Up
+          </Link>
+        </li>
       </ul>
     </nav>
   );

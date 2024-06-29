@@ -20,6 +20,30 @@ const PhotoGallery = () => {
             <IoIosHeart className="text-2xl text-red-500 cursor-pointer hover:scale-110 transition-all ease-linear duration-300 " />
           }
         />
+        <ImageCard
+          title="The Beach"
+          author="realrajdip"
+          img="https://images.pexels.com/photos/12984738/pexels-photo-12984738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          price={"10"}
+          icon1={
+            <FaShoppingCart className="text-2xl text-black cursor-pointer hover:scale-110 transition-all ease-linear duration-300 " />
+          }
+          icon2={
+            <IoIosHeart className="text-2xl text-red-500 cursor-pointer hover:scale-110 transition-all ease-linear duration-300 " />
+          }
+        />
+        <ImageCard
+          title="The Beach"
+          author="realrajdip"
+          img="https://images.pexels.com/photos/21293020/pexels-photo-21293020/free-photo-of-potted-plants-on-either-side-of-an-old-wooden-door.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          price={"10"}
+          icon1={
+            <FaShoppingCart className="text-2xl text-black cursor-pointer hover:scale-110 transition-all ease-linear duration-300 " />
+          }
+          icon2={
+            <IoIosHeart className="text-2xl text-red-500 cursor-pointer hover:scale-110 transition-all ease-linear duration-300 " />
+          }
+        />
       </div>
     </div>
   );
