@@ -11,10 +11,7 @@ const router = require('express').Router();
 //     // op: {"message":"Hello World","name":"hi"}
 // })
 
-router.get('/login', login); 
-router.get('/hi', (req, res) => {
-    res.send("hi")
-}); 
+router.post('/login', login); 
 router.post('/signup', signup); 
 
 module.exports = router; 
