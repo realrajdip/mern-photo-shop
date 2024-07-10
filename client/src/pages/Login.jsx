@@ -2,9 +2,12 @@ import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { login } from "../../store/slices/authSlice";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,13 +21,15 @@ const Login = () => {
       });
 
       const data = await res.data;
-      if(data.success) {
-        setEmail('');
-        setPassword('')
-        toast.success(data.message);
+      // if(data.success) {
+      setEmail("");
+      setPassword("");
+      toast.success(data.message);
 
-        navigate('/')
-      }
+      // }
+      console.log(data);
+      dispatch(login(data));
+      navigate(`/${data.role}/profile`)
     } catch (err) {
       toast.error(err.response.data.message);
     }
