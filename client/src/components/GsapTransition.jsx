@@ -20,7 +20,7 @@ const GsapTransition = () => {
 
   return (
     <div ref={nodeRef}>
-    <Toaster position="top-right" reverseOrder={false} />
+    <Toaster position="top-center" reverseOrder={false} />
       <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
