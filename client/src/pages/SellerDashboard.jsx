@@ -1,6 +1,13 @@
+import DashboardSidebar from "../components/DashboardSidebar"
+
 const SellerDashboard = () => {
   return (
-    <div>SellerDashboard</div>
+    <div>
+      <DashboardSidebar/>
+      <div>
+        {/* change pages through switch cases */}
+      </div>
+    </div>
   )
 }
 
