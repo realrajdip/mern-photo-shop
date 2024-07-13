@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const navSlice = createSlice({
   name: "nav",
   initialState: {
-    sideBar: false,
+    sidebar: false,
     tab: "",
   },
   reducers: {
     toggleSidebar: (state) => {
-      state.sidebar = !sidebar;
+      state.sidebar = !state.sidebar;
     },
     setTab: (state, action) => {
         state.tab = action.payload; 
