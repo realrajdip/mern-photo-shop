@@ -1,11 +1,39 @@
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post(import.meta.env.VITE_API_URL + "/login", {
+        email,
+        password,
+      });
+
+      const data = await res.data;
+      if(data.success) {
+        setEmail('');
+        setPassword('')
+        toast.success(data.message);
+
+        navigate('/')
+      }
+    } catch (err) {
+      toast.error(err.response.data.message);
+    }
+  };
   return (
     <div className="mt-20 sm:mt-10 min-h-screen flex items-center justify-center w-full">
       <div className="bg-white shadow-md rounded-none sm:rounded-3xl px-5 py-6 sm:w-[27rem] w-full">
         <h1 className="text-2xl font-bold text-center mb-4">Let's Connect!</h1>
-        <form>
+        <form onSubmit={handleLogin}>
           {/* For email */}
           <div className="mb-4">
             <label
@@ -20,6 +48,8 @@ const Login = () => {
               id="email"
               placeholder="someone@email.com"
               className="shadow-md rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-black focus:border-black"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -37,6 +67,8 @@ const Login = () => {
               id="password"
               placeholder="Enter your password"
               className="shadow-md rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-black focus:border-black"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
@@ -52,8 +84,11 @@ const Login = () => {
             </Link>
           </div>
 
-          <button type="submit" className="w-full py-2 px-4 rounded-md shadow-md text-sm font-medium text-white bg-black ">
-            Signup
+          <button
+            type="submit"
+            className="w-full py-2 px-4 rounded-md shadow-md text-sm font-medium text-white bg-black "
+          >
+            Login
           </button>
         </form>
       </div>
