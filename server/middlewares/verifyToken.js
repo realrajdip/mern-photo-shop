@@ -22,12 +22,14 @@ const verifyToken = async (req, res, next) => {
               .json({ success: false, message: "Forbidden" });
           }
 
-          req.id = user.id; 
-          req.author = user.author; 
-          req.accountType = user.accountType; 
+          req.id = user.id;
+          req.author = user.author;
+          req.accountType = user.accountType;
 
-          next(); 
+          next();
         }
       );
   }
 };
+
+module.exports = { verifyToken };
